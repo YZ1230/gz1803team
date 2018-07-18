@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<form action="" method="post" style="text-align: center">
+    {%csrf_token%}
+    <input type="text" placeholder="请输入用户名" name="u_name">
+    <br>
+    <input type="password" placeholder="请输入密码" name="u_pwd">
+    <br>
+    <img src="/d7work/get_verify_img" alt="" id="verify_code">
+    <br>
+    <input type="text" placeholder="请输入验证码" name="code">
+    <input type="submit" value="登录">
+
+</form>
+</body>
+<script>
+    $('#verify_code').click(function () {
+        $(this).attr('src','/d7work/get_verify_img' + Math.random())
+    })
+</script>
+</html>

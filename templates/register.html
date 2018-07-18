@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<form action="" method="post" style="text-align: center">
+    {%csrf_token%}
+    <input type="text" placeholder="请输入用户名" name="u_name">
+    <br>
+    <input type="text" placeholder="请输入电话号码" name="u_phone">
+    <br>
+    <input type="email" placeholder="请输入邮箱" name="u_email">
+    <br>
+    <input type="password" placeholder="请输入密码" name="u_pwd">
+    <br>
+    <input type="password" placeholder="请再次输入密码" name="u_confirm_pwd">
+    <br>
+    <img src="/d7work/get_verify_img" alt="" id="verify_code">
+    <br>
+    <input type="text" placeholder="验证码" name="code">
+    <br>
+    <input type="submit" value="注册">
+
+</form>
+</body>
+<script>
+    $('#verify_code').click(function () {
+        $(this).attr('src','/d7work/get_verify_img' + Math.random())
+    })
+</script>
+</html>
